@@ -11,7 +11,7 @@ import * as octaves from './octaves.js'
 export class KeyboardComponent {
   // ATTRIBUTES
   keys: HTMLElement
-  duration: Number
+  duration: number
   white_notes: Object[]
   synth = new Tone.PolySynth().toDestination()
   note: Frequency
