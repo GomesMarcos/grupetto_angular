@@ -19,7 +19,6 @@ export class KeyboardComponent implements OnInit {
 
   constructor() {
     this.keyOctaves = octaves.default
-    console.log(this.keyOctaves)
   }
 
   ngOnInit(): void {
