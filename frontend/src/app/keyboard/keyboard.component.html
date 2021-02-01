@@ -1,0 +1,40 @@
+<div
+  id="keyboardWrapper"
+  class="container-fluid !direction !spacing keyboard-wrapper"
+  *ngFor="let octave of keyOctaves; let i = index"
+>
+  <div
+    *ngFor="let note of octave"
+    (mousedown)="onMouseDown($event)"
+    (mouseup)="onMouseUp($event)"
+    (mousele)="onMouseUp($event)"
+    (hover)="addClassHover($event)"
+    id="{{ note.label }}4"
+    class="keyboard white"
+  >
+    <span class="note-label">
+      {{ note.label }}
+      <div
+        *ngIf="note.hasSharp"
+        (mousedown)="onMouseDown($event)"
+        (mouseup)="onMouseUp($event)"
+        (mousele)="onMouseUp($event)"
+        (hover)="addClassHover($event)"
+        id="{{ note.label }}#4"
+        class="keyboard black"
+      >
+        <span class="note-label">{{ note.label }}#</span>
+      </div>
+    </span>
+  </div>
+  <div
+    (mousedown)="onMouseDown($event)"
+    (mouseup)="onMouseUp($event)"
+    (mousele)="onMouseUp($event)"
+    (hover)="addClassHover($event)"
+    id="C{{ i + 5 }}"
+    class="keyboard white"
+  >
+    <span class="note-label">C</span>
+  </div>
+</div>
